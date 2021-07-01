@@ -43,47 +43,31 @@ const Headers = () => {
                 )}
               </Link>
             </li>
-            <li className="nav-item">
-              {userInfo ? (
-                <div
-                  className="collapse navbar-collapse"
-                  id="navbarNavDarkDropdown"
-                >
-                  <ul className="navbar-nav">
-                    <li className="nav-item dropdown">
-                      <Link
-                        className="nav-link dropdown-toggle dropdown-item"
-                        to="#"
-                        id="navbarDarkDropdownMenuLink"
-                        role="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        <i className="fas fa-user"></i>&nbsp;{userInfo.name}
-                      </Link>
-                      <ul
-                        className="dropdown-menu dropdown-menu-success bg-success"
-                        aria-labelledby="navbarDarkDropdownMenuLink"
-                      >
-                        <li>
-                          <Link
-                            className="dropdown-item"
-                            to="#signout"
-                            onClick={signoutHandler}
-                          >
-                            Sign Out
-                          </Link>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              ) : (
+            {userInfo ? (
+              <>
+                <li className="nav-item">
+                  <Link className="nav-link" to="#">
+                    <i className="fas fa-user"></i>&nbsp;{userInfo.name}
+                  </Link>
+                </li>
+
+                <li className="nav-item">
+                  <Link
+                    className="nav-link"
+                    to="#signout"
+                    onClick={signoutHandler}
+                  >
+                    <i class="fas fa-sign-in-alt"></i>&nbsp;Sign Out
+                  </Link>
+                </li>
+              </>
+            ) : (
+              <li className="nav-item">
                 <Link className="nav-link" to="/signin">
                   <i className="fas fa-user"></i>&nbsp;Sign In
                 </Link>
-              )}
-            </li>
+              </li>
+            )}
           </ul>
         </div>
       </div>

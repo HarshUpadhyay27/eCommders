@@ -11,7 +11,7 @@ const PlaceOrderScreen = () => {
   const { loading, error, success, order } = orderCreate;
   console.log(loading, error, success, order);
   const dispatch = useDispatch();
-  if (!cart.paymentNethod) {
+  if (!cart.paymentMethod) {
     history.push("/payment");
   }
 
@@ -28,6 +28,8 @@ const PlaceOrderScreen = () => {
 
   const placeOrderHandler = () => {
     dispatch(createOrderAction({ ...cart, orderItems: cart.cartItems }));
+    history.push("/")
+    localStorage.removeItem('cartItem')
   };
   return (
     <div>
@@ -55,7 +57,7 @@ const PlaceOrderScreen = () => {
                 <div className="card-body">
                   <h5 className="card-title">Payment</h5>
                   <p className="card-text">
-                    <strong>Mthod</strong>: {cart.paymentNethod}
+                    <strong>Mthod</strong>: {cart.paymentMethod}
                   </p>
                 </div>
               </div>

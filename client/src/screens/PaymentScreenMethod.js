@@ -9,6 +9,7 @@ const PaymentScreenMethod = () => {
   const { userInfo } = userSignin;
 
   const [payment, setPayment] = useState("PayPal");
+  console.log(payment)
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -39,7 +40,6 @@ const PaymentScreenMethod = () => {
               className="form-check-input"
               type="radio"
               name="flexRadioDefault"
-              checked
               id="flexRadioDefault1"
               value="PayPal"
               onChange={(e) => {

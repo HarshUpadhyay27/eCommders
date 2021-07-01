@@ -30,7 +30,7 @@ const initialState = {
     shippingAddress: localStorage.getItem("shippingAddress")
       ? JSON.parse(localStorage.getItem("shippingAddress"))
       : {},
-    paymentNethod: "PayPal",
+    paymentMethod: "PayPal",
   },
 };
 const middleware = [thunk];

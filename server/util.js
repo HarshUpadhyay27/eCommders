@@ -33,5 +33,4 @@ const isAuth = (req, res, next) => {
   }
 };
 
-module.exports = genrateToken
-module.exports = isAuth
+module.exports = genrateToken, isAuth

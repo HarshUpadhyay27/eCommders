@@ -9,6 +9,7 @@ import RegisterScreen from "./screens/RegisterScreen";
 import ShippingAdress from "./screens/ShippingAdress";
 import PaymentScreenMethod from "./screens/PaymentScreenMethod";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
           <Route exact path="/payment" component={PaymentScreenMethod} />
           <Route exact path="/placeholder" component={PlaceOrderScreen} />
         </main>
+        <Footer/>
       </Router>
   );
 };

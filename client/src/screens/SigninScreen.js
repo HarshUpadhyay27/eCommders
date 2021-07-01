@@ -2,6 +2,8 @@ import React, {useState, useEffect} from "react";
 import { Link, useHistory } from "react-router-dom";
 import {useDispatch, useSelector} from 'react-redux'
 import { signinAction } from "../reudux/actions/porducts/userAction";
+import Loading from "../components/Loading";
+import MessageBox from "../components/MessageBox";
 
 const SigninScreen = (props) => {
   const history = useHistory()
@@ -27,6 +29,12 @@ const SigninScreen = (props) => {
 
   return (
     <div>
+      {loading ? (
+          <Loading></Loading>
+        ) : error ? (
+          <MessageBox>{error}</MessageBox>
+        ) : (
+          <div>
       <form className="m-auto p-4" style={{ maxWidth: "500px" }} onSubmit={submitHandler}>
         <div className="mb-3">
           <h1>Sing In</h1>
@@ -63,6 +71,8 @@ const SigninScreen = (props) => {
           Don't have an Account? <Link to={`/register?redirect=${redirect}`} style={{textDecoration:"none"}}>Click hear</Link>
         </div>
       </form>
+    </div>
+        )}
     </div>
   );
 };

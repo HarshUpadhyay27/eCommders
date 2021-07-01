@@ -15,7 +15,7 @@ export const createOrderAction = ({order}) => async (dispatch, getState) => {
     const {
       userSignin: { userInfo },
     } = getState();
-    const { data } = await axios.post("/api/orders", order, {
+    const { data } = await axios.post("/api/order/", order, {
       headers: {
         Authorization: `Bearer ${userInfo.token}`,
       },
